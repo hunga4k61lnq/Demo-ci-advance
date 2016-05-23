@@ -1,0 +1,909 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head >
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Hệ thống quản trị website</title>
+      <meta name="robots" content="noindex, nofollow">
+      <link type="text/css" rel="stylesheet" href="theme/admin/static/bootstrap.css">
+      <link type="text/css" rel="stylesheet" href="theme/admin/static/font-awesome.css">
+      <link type="text/css" rel="stylesheet" href="theme/admin/static/combined.css">
+      <script type="text/javascript" src="theme/admin/static/jquery.min.js"></script>
+      <script type="text/javascript">        var $j = jQuery.noConflict();</script>
+      <script type="text/javascript" src="theme/admin/static/bootstrap.min.js"></script>
+   </head>
+   <body class="fixed-top">
+      <div class="PageHeader">
+         <div class="LogoHeader">
+            <div class="logoimage">
+               <a class="SiteName" href="http://samnuikorea.bizwebvietnam.com/admin">
+               <img border="0" src="static/logo2.png" alt="logo" title="logo">
+               </a>
+            </div>
+            <div class="linkroot">
+               <a class="SiteName" href="http://xekumho.com/" target="_blank">
+               xekumho.com
+               </a>
+            </div>
+         </div>
+         <div class="SystemMenu">
+            <div style="display: block;">
+               <ul class="sysMenu">
+                  <li class="first"><a class="link-topmenu" href="http://samnuikorea.bizwebvietnam.com/admin"><i class="icon-home"></i>Trang
+                     chủ</a>
+                  </li>
+                  <li id="MenuNotification" class="dropdown">
+                     <a class="link-topmenu dropdown-toggle" data-toggle="dropdown" href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=dashboard#">
+                     <i class="icon-bell-alt"></i>
+                     <span class="badge badge-important"></span>&nbsp;
+                     Thông báo
+                     </a>
+                     <ul class="dropdown-menu extended notification">
+                        <li>
+                           <p>Bạn có <span class="totalBadge">0</span> thông báo mới</p>
+                        </li>
+                        <li>
+                           <a class="NotiNewOrder" href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=orders"><span class="label label-important"><i class="icon-shopping-cart"></i></span>Bạn không có đơn hàng mới</a>
+                        </li>
+                        <li>
+                           <a class="NotiNewReview" href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=productreviews"><span class="label label-warning"><i class="icon-star"></i></span>Bạn không có đánh giá sản phẩm mới</a>
+                        </li>
+                        <li>
+                           <a class="NotiNewContact" href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=contacts"><span class="label label-info"><i class="icon-comments"></i></span>Bạn không có liên hệ khách hàng mới</a>
+                        </li>
+                        <li>
+                           <a class="NotiNewMessage" href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=orders&act=message"><span class="label label-success"><i class="icon-envelope"></i></span>Bạn không có tin nhắn đơn hàng mới</a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=notification">Xem tất cả thông báo</a>
+                        </li>
+                     </ul>
+                  </li>
+                  <li><a class="link-topmenu" href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=users"><i class="icon-user"></i>
+                     Tài khoản quản trị</a>
+                  </li>
+                  <li class="HaveSubmenu">
+                     <a id="ReportingChart" class="link-topmenu" href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=analytics&act=visitors"><i class="icon-bar-chart"></i>Thống kê</a>
+                     <ul class="hidden-topmenu">
+                        <li>
+                           <a class="" href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=analytics&act=visitors">
+                              <div class="perMenuItem">
+                                 Thống kê truy cập
+                              </div>
+                           </a>
+                        </li>
+                        <li>
+                           <a class="" href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=analytics&act=statistics">
+                              <div class="perMenuItem">
+                                 Thống kê dung lượng
+                              </div>
+                           </a>
+                        </li>
+                        <li>
+                           <a class="" href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=analytics&act=ordersChart">
+                              <div class="perMenuItem">
+                                 Thống kê đơn hàng
+                              </div>
+                           </a>
+                        </li>
+                        <li>
+                           <a class="" href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=analytics&act=logAction">
+                              <div class="perMenuItem">
+                                 Lịch sử thao tác
+                              </div>
+                           </a>
+                        </li>
+                     </ul>
+                  </li>
+                  <li class="ViewWebsite">
+                     <a class="link-topmenu" href="http://xekumho.com/" target="_blank"><i class="icon-list-alt"></i>Xem website</a>
+                     <ul class="hidden-topmenu">
+                        <li>
+                           <a class="" href="http://xekumho.com/" target="_blank">
+                              <div class="perMenuItem">
+                                 Chỉ xem website
+                              </div>
+                           </a>
+                        </li>
+                        <li>
+                           <a class="" href="http://samnuikorea.bizwebvietnam.com/" target="_blank">
+                              <div class="perMenuItem">
+                                 Xem và chỉnh sửa module
+                              </div>
+                           </a>
+                        </li>
+                     </ul>
+                  </li>
+                  <li><a class="link-topmenu" href="http://www.bizweb.vn/Tro-giup-p164.html" target="_blank"><i class="icon-question-sign"></i>Trợ giúp</a></li>
+                  <li class="last">
+                     <div class="btn-group">
+                        <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=users&action=edituser&id=105479" class="btn account-info btn-info">
+                        <i class="icon-user"></i>
+                        admin</a><a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=dashboard#" data-toggle="dropdown" class="btn btn-info dropdown-toggle dropdown-toggle-acount"><span class="icon-caret-down"></span></a>
+                        <ul class="dropdown-menu custome">
+                           <li><a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=users&action=changepass"><i class="icon-key"></i>Đổi
+                              mật khẩu</a>
+                           </li>
+                           <li>
+                              <a id="siteUser_Lbtn_Logout" class="NormalGray" href="javascript:__doPostBack('ctl00$siteUser$Lbtn_Logout','')"><i class="icon-signout"></i> Thoát</a>
+                           </li>
+                        </ul>
+                     </div>
+                  </li>
+               </ul>
+               <div style="clear: both"></div>
+            </div>
+            <div class="siteinfo">
+               <ul>
+                  <li style="margin-right: 5px; padding-top: 5px;">Website của bạn sử dụng gói dịch vụ <span style="color: #22878E; font-weight: bold;">eGold</span> đến ngày</li>
+                  <li class="block-time">06</li>
+                  <li class="block-time">07</li>
+                  <li class="block-time">2016</li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <div id="container" class="row-fluid">
+         <div class="clear" style="height: 10px"></div>
+         <div class="boder_menu">
+            <div id="menu">
+               <ul>
+                  <li>
+                     <a class="TopMenuItem" href="javascript:;">
+                     <span class="MenuText"><i class="icon-shopping-cart"></i>Đơn hàng</span>
+                     </a>
+                     <ul>
+                        <li class="SubFirst">
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=orders">
+                           <span class="SubMenuText">Danh sách đơn hàng
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=orders&act=message">
+                           <span class="SubMenuText">Tin nhắn từ khách hàng
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=exportorders">
+                           <span class="SubMenuText">Xuất danh sách đơn hàng
+                           </span>
+                           </a>
+                        </li>
+                     </ul>
+                  </li>
+                  <li>
+                     <a class="TopMenuItem" href="javascript:;">
+                     <span class="MenuText"><i class="icon-tags"></i>Sản phẩm</span>
+                     </a>
+                     <ul>
+                        <li class="SubFirst">
+                           <a href="http://samnuikorea.bizwebvietnam.com/Popup/QuickPost.aspx" class="quickpost" data-fancybox-type="iframe">
+                           <span class="SubMenuText">Đăng sản phẩm nhanh</span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=products&act=add&random=5111499">
+                           <span class="SubMenuText">Thêm mới sản phẩm</span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=products">
+                           <span class="SubMenuText">Danh sách sản phẩm
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=categories">
+                           <span class="SubMenuText">Danh mục sản phẩm
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=vendors">
+                           <span class="SubMenuText">Nhà sản xuất
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=customcategories">
+                           <span class="SubMenuText">Danh mục tùy chọn
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=productfeatures">
+                           <span class="SubMenuText">Thuộc tính sản phẩm
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=productoption">
+                           <span class="SubMenuText">Nhóm tùy chọn sản phẩm
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=productreviews">
+                           <span class="SubMenuText">Đánh giá, phản hồi sản phẩm
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=import">
+                           <span class="SubMenuText">Nhập danh sách sản phẩm
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=export">
+                           <span class="SubMenuText">Xuất danh sách sản phẩm
+                           </span>
+                           </a>
+                        </li>
+                     </ul>
+                  </li>
+                  <li>
+                     <a class="TopMenuItem" href="javascript:;">
+                     <span class="MenuText"><i class="icon-th-large"></i>Nội dung</span>
+                     </a>
+                     <ul>
+                        <li class="SubFirst">
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=articles">
+                           <span class="SubMenuText">Quản lý tin tức
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=articlecategories">
+                           <span class="SubMenuText">Danh mục tin
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=survey">
+                           <span class="SubMenuText">Thăm dò ý kiến
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=gallery">
+                           <span class="SubMenuText">Quản lý Gallery
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=download">
+                           <span class="SubMenuText">Quản lý download
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=pages">
+                           <span class="SubMenuText">Quản lý trang chức năng 
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=filemanager">
+                           <span class="SubMenuText">Quản lý ảnh 
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=tags">
+                           <span class="SubMenuText">Quản lý Tags</span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=video">
+                           <span class="SubMenuText">Quản lý video
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=form">
+                           <span class="SubMenuText">Quản lý form
+                           </span>
+                           </a>
+                        </li>
+                     </ul>
+                  </li>
+                  <li>
+                     <a class="TopMenuItem" href="javascript:;">
+                     <span class="MenuText"><i class="icon-user"></i>Khách hàng</span>
+                     </a>
+                     <ul>
+                        <li class="SubFirst">
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=contacts">
+                           <span class="SubMenuText">Liên hệ từ khách hàng 
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=customers">
+                           <span class="SubMenuText">Danh sách khách hàng 
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=customergroups">
+                           <span class="SubMenuText">Nhóm khách hàng
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=emailsubscription">
+                           <span class="SubMenuText">Danh sách Email đăng ký
+                           </span>
+                           </a>
+                        </li>
+                     </ul>
+                  </li>
+                  <li>
+                     <a class="TopMenuItem" href="javascript:;">
+                     <span class="MenuText"><i class="icon-globe"></i>Tiếp thị</span>
+                     </a>
+                     <ul>
+                        <li class="SubFirst">
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=seo">
+                           <span class="SubMenuText">SEO trên Google </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=promotion">
+                           <span class="SubMenuText">Thiết lập khuyến mãi</span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=affiliate">
+                           <span class="SubMenuText">Cộng tác viên - Site liên kết</span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=coupons">
+                           <span class="SubMenuText">Mã khuyến mại (Coupons)</span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=emailmarketing">
+                           <span class="SubMenuText">Tiếp thị qua Email
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=ad">
+                           <span class="SubMenuText">Quảng cáo trực tuyến
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=smsmarketing">
+                           <span class="SubMenuText">SMS Marketing
+                           </span>
+                           </a>
+                        </li>
+                     </ul>
+                  </li>
+                  <li>
+                     <a class="TopMenuItem" href="javascript:;">
+                     <span class="MenuText"><i class="icon-signin"></i>Tích hợp</span>
+                     </a>
+                     <ul>
+                        <li class="SubFirst">
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=sitesetting&action=hangtotstoresetting">
+                           <span class="SubMenuText">Gian hàng Hangtot.com
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=socialshop">
+                           <span class="SubMenuText">Ứng dụng Facebook
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=livechat">
+                           <span class="SubMenuText">Live Chat
+                           </span>
+                           </a>
+                        </li>
+                     </ul>
+                  </li>
+                  <li>
+                     <a class="TopMenuItem" href="javascript:;">
+                     <span class="MenuText"><i class="icon-picture"></i>Giao diện</span>
+                     </a>
+                     <ul>
+                        <li class="SubFirst">
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=menu">
+                           <span class="SubMenuText">Quản lý Menu
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=skins">
+                           <span class="SubMenuText">Giao diện website 
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=skins&action=mobile">
+                           <span class="SubMenuText">Thiết bị di động
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=skins&action=banner">
+                           <span class="SubMenuText">Logo &amp; Banner 
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=skins&action=footer">
+                           <span class="SubMenuText">Chân trang (Footer) 
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=skins&action=background">
+                           <span class="SubMenuText">Thay đổi hình nền 
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=notificationtemplate">
+                           <span class="SubMenuText">Template thông báo
+                           </span>
+                           </a>
+                        </li>
+                     </ul>
+                  </li>
+                  <li>
+                     <a class="TopMenuItem" href="javascript:;">
+                     <span class="MenuText"><i class="icon-cogs"></i>Cấu hình</span>
+                     </a>
+                     <ul>
+                        <li class="SubFirst">
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=sitesetting">
+                           <span class="SubMenuText">Cấu hình website
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=sitesetting&action=othersetting">
+                           <span class="SubMenuText">Cấu hình tên miền (Domain)</span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=sitesetting&action=googleanalytics">
+                           <span class="SubMenuText">Cài đặt Google Analytics
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=currencysetting">
+                           <span class="SubMenuText">Cấu hình tiền tệ
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=paymentsetting">
+                           <span class="SubMenuText">Cấu hình thanh toán 
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=shippingsetting">
+                           <span class="SubMenuText">Cấu hình vận chuyển
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=support">
+                           <span class="SubMenuText">Hỗ trợ trực tuyến
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=ftpsetting">
+                           <span class="SubMenuText">Cấu hình FTP
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=redirects">
+                           <span class="SubMenuText">Chuyển hướng 301
+                           </span>
+                           </a>
+                        </li>
+                     </ul>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <div id="bizweb50banner">
+            <span title="Tắt" class="bannerads-close"></span>
+            <a class="bannerdetail" href="http://blog.bizweb.vn/qua-tang-13-trieu-mung-sinh-nhat-dkt-khi-chay-quang-cao-google-adwords/" target="_blank" title="bizweb google adwords"></a>
+         </div>
+         <div id="main-content">
+            <div class="container-fluid">
+               <div style="width: 100%; margin: 0 auto;">
+                  <div id="Breadcrumb" class="Block Breadcrumb ui-widget-content ui-corner-top ui-corner-bottom">
+                     <ul>
+                        <li class="Last"><span><i class="icon-home" style="font-size:14px;"></i> Trang chủ</span></li>
+                     </ul>
+                  </div>
+                  <div style="clear: both;"></div>
+                  <div id="cph_Main_ContentPane">
+                     <div class="">
+                        <!-- widget Thông báo -->
+                        <div class="span6">
+                           <div class="widget">
+                              <div class="widget-title">
+                                 <h4>
+                                    <i class="icon-bullhorn"></i>&nbsp;Thông báo
+                                 </h4>
+                              </div>
+                              <div class="widget-body">
+                                 <ul class="hotIconList">
+                                    <li>
+                                       <a target="_blank" href="http://blog.bizweb.vn/thong-bao-ve-quy-trinh-moi-tiep-nhan-yeu-cau-ho-tro-cua-khach-hang-bizweb/?_ga=1.219401177.1569982950.1383547915">Thông báo về Quy trình mới tiếp nhận Yêu cầu hỗ trợ của Khách hàng Bizweb</a>
+                                    </li>
+                                    <li>
+                                       <a target="_blank" href="http://blog.bizweb.vn/thong-bao-lich-nghi-mat-cong-ty-co-phan-cong-nghe-dkt/">Thông báo lịch nghỉ mát Công ty Cổ phần Công nghệ DKT</a>
+                                    </li>
+                                    <li>
+                                       <a target="_blank" href="http://blog.bizweb.vn/tham-gia-cac-khoa-hoc-cua-bizweb-voi-muc-tro-gia-hoc-phi-300-000d/">Tham gia các khóa học của Bizweb với mức trợ giá: Học phí 300.000đ</a>
+                                    </li>
+                                    <li>
+                                       <a target="_blank" href="http://blog.bizweb.vn/bizweb-ho-tro-khach-hang-bat-tinh-nang-giao-dien-mobile/">Bizweb hỗ trợ khách hàng bật tính năng giao diện web trên mobile</a>
+                                    </li>
+                                    <li>
+                                       <a target="_blank" href="http://blog.bizweb.vn/cong-dong-kinh-doanh-dieu-dung-truoc-thuat-toan-moi-cua-google-facebook/">Google ban hành thuật toán mới và sẽ đánh tụt hạng những site không có phiên bản giao diện mobile</a>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- widget hỗ trợ khách hàng -->
+                        <div class="span6">
+                           <div class="widget">
+                              <div class="widget-body inlineblock heightSupport">
+                                 <div class="supportInfoNew support-info homecontainer">
+                                    <div class="icon iconFullSize">
+                                       <a href="http://support.bizweb.vn/open.php" rel="nofollow" target="_blank" title="Yêu cầu hỗ trợ">
+                                       <img src="static/support-icon_03.png" alt="support icon">
+                                       </a>
+                                    </div>
+                                    <div class="info infoMarginLeft" style="color:#606060;">
+                                       <div class="f14">
+                                          <h4 style="font-size:16px;font-weight:bold;margin-top:16px;">Bạn cần trợ giúp?</h4>
+                                       </div>
+                                       <div class="f14">
+                                          Hãy tạo Yêu cầu hỗ trợ mới <a href="http://support.bizweb.vn/open.php" rel="nofollow" target="_blank" title="Yêu cầu hỗ trợ">tại đây</a>
+                                       </div>
+                                       <div class="f14" style="margin-bottom:-5px;">
+                                          Trung tâm trợ giúp Bizweb sẽ hỗ trợ bạn sớm nhất &nbsp;<img src="static/lol-icon.jpg" style="display: none !important; visibility: hidden !important; opacity: 0 !important; background-position: 0px 0px;" width="0" height="0">
+                                       </div>
+                                    </div>
+                                    <div class="clear">
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- widget báo cáo -->
+                        <div class="">
+                           <!-- Thống kê đơn hàng -->
+                           <div class="widget">
+                              <div class="widget-body">
+                                 <div class="tabs tabbable tabbable-custom">
+                                    <div class="statistic row-fluid circle-state-overview">
+                                       <!-- Khách hàng -->
+                                       <div class="span2 responsive" data-desktop="span2" data-tablet="span3">
+                                          <div class="circle-wrap">
+                                             <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=customers">
+                                                <div class="stats-circle turquoise-color">
+                                                   <i class="icon-user"></i>
+                                                </div>
+                                                <p>
+                                                   <strong>
+                                                   0</strong>
+                                                   Khách hàng
+                                                </p>
+                                             </a>
+                                          </div>
+                                       </div>
+                                       <!-- Sản phẩm -->
+                                       <div class="span2 responsive" data-desktop="span2" data-tablet="span3">
+                                          <div class="circle-wrap">
+                                             <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=products">
+                                                <div class="stats-circle red-color">
+                                                   <i class="icon-tags"></i>
+                                                </div>
+                                                <p>
+                                                   <strong>
+                                                   101</strong> Sản
+                                                   phẩm
+                                                </p>
+                                             </a>
+                                          </div>
+                                       </div>
+                                       <!-- Đơn hàng -->
+                                       <div class="span2 responsive" data-desktop="span2" data-tablet="span3">
+                                          <div class="circle-wrap">
+                                             <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=orders">
+                                                <div class="stats-circle  green-color">
+                                                   <i class="icon-shopping-cart"></i>
+                                                </div>
+                                                <p>
+                                                   <strong>
+                                                   0</strong> Đơn
+                                                   hàng <strong class="SmallNotification">
+                                                   </strong>
+                                                </p>
+                                             </a>
+                                          </div>
+                                       </div>
+                                       <!-- Liên hệ -->
+                                       <div data-desktop="span2" data-tablet="span3" class="span2 responsive">
+                                          <div class="circle-wrap">
+                                             <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=contacts">
+                                                <div class="stats-circle  gray-color">
+                                                   <i class="icon-comments-alt"></i>
+                                                </div>
+                                                <p>
+                                                   <strong>
+                                                   1</strong>
+                                                   Liên hệ <strong class="SmallNotification">
+                                                   </strong>
+                                                </p>
+                                             </a>
+                                          </div>
+                                       </div>
+                                       <!-- Danh mục sản phẩm -->
+                                       <div class="span2 responsive" data-desktop="span3" data-tablet="span3">
+                                          <div class="circle-wrap">
+                                             <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=categories">
+                                                <div class="stats-circle blue-color">
+                                                   <i class="icon-sitemap"></i>
+                                                </div>
+                                                <p>
+                                                   <strong>
+                                                   38</strong>
+                                                   Danh mục sản phẩm
+                                                </p>
+                                             </a>
+                                          </div>
+                                       </div>
+                                       <!-- Tin tức -->
+                                       <div class="span2 responsive" data-desktop="span3" data-tablet="span3">
+                                          <div class="circle-wrap">
+                                             <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=articles">
+                                                <div class="stats-circle purple-color">
+                                                   <i class="icon-file"></i>
+                                                </div>
+                                                <p>
+                                                   <strong>
+                                                   36</strong> Tin tức
+                                                </p>
+                                             </a>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="widget-title titleheight">
+                                       <ul class="nav nav-tabs">
+                                          <li class="active"><a id="control_1" href="javascript:void(0);" class="first current titleHeader">Thống kê bán hàng</a></li>
+                                          <li><a id="control_2" href="javascript:void(0);" class="titleHeader">Phản hồi đơn hàng&nbsp;(<span id="sp_reply_order">0</span>)
+                                             </a>
+                                          </li>
+                                          <li><a id="control_3" href="javascript:void(0);" class="titleHeader">Đánh giá sản phẩm&nbsp;(<span id="sp_review">0</span>)
+                                             </a>
+                                          </li>
+                                       </ul>
+                                    </div>
+                                    <div class="content tab-content">
+                                       <table id="content_1" border="0" style="width: 100%;">
+                                          <tbody>
+                                             <tr>
+                                                <td colspan="2">
+                                                   <div style="padding-top: 13px; padding-left: 5px;">
+                                                      <i class="smallIcon icon-shopping-cart green-color"></i>&nbsp;&nbsp; <strong>Đơn đặt
+                                                      hàng mới:</strong>
+                                                      Không có
+                                                      (<a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=orders">Xem toàn bộ</a>)
+                                                   </div>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td colspan="2">
+                                                   <div style="padding-top: 13px; padding-left: 5px;">
+                                                      <i class="smallIcon icon-comments-alt gray-color"></i>&nbsp;&nbsp; <strong>Liên hệ mới:</strong>
+                                                      0
+                                                      (<a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=contacts">Xem toàn bộ</a>)
+                                                   </div>
+                                                </td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                       <div id="content_2" style="display: none;">
+                                          <div style="padding: 5px;">
+                                             Không có phản hồi mới nào !
+                                          </div>
+                                       </div>
+                                       <div id="content_3" class="review" style="display: none;">
+                                          <div style="padding: 5px;">
+                                             Không có đánh giá, nhận xét mới nào về sản phẩm !
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- widget truy cập nhanh -->
+                        <div class="span6 NoMarginLeft">
+                           <div class="widget">
+                              <div class="widget-title">
+                                 <h4>
+                                    <i class="icon-bolt"></i>&nbsp;Truy cập nhanh
+                                 </h4>
+                              </div>
+                              <div class="widget-body maxheight">
+                                 <div class="square-state">
+                                    <div class="row-fluid">
+                                       <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=products&act=add&random=6672977" class="icon-btn span3">
+                                          <i class="icon-plus-sign"></i>
+                                          <div>
+                                             Thêm sản phẩm mới
+                                          </div>
+                                       </a>
+                                       <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=orders" class="icon-btn span3">
+                                          <i class="icon-shopping-cart"></i>
+                                          <div>
+                                             Danh sách đơn hàng
+                                          </div>
+                                       </a>
+                                       <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=categories" class="icon-btn span3">
+                                          <i class="icon-sitemap"></i>
+                                          <div>
+                                             Danh mục sản phẩm
+                                          </div>
+                                       </a>
+                                       <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=articles&act=add" class="icon-btn span3">
+                                          <i class="icon-plus"></i>
+                                          <div>
+                                             Thêm tin mới
+                                          </div>
+                                       </a>
+                                    </div>
+                                    <div class="row-fluid">
+                                       <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=skins" class="icon-btn span3">
+                                          <i class="icon-picture"></i>
+                                          <div>
+                                             Giao diện website
+                                          </div>
+                                       </a>
+                                       <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=skins&action=banner" class="icon-btn span3">
+                                          <i class="icon-th-large"></i>
+                                          <div>
+                                             Logo &amp; Banner
+                                          </div>
+                                       </a>
+                                       <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=menu" class="icon-btn span3">
+                                          <i class="icon-cog"></i>
+                                          <div>
+                                             Quản lý Menu
+                                          </div>
+                                       </a>
+                                       <a href="http://samnuikorea.bizwebvietnam.com/admin.aspx?module=sitesetting" class="icon-btn span3">
+                                          <i class="icon-wrench"></i>
+                                          <div>
+                                             Cấu hình website
+                                          </div>
+                                       </a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- widget các vấn đề thường gặp, video hướng dẫn nhanh, giúp bạn bán hàng nhiều hơn-->
+                        <div class="span6">
+                           <div class="widget">
+                              <div class="widget-title titleheight">
+                                 <ul class="nav nav-tabs">
+                                    <li class="active"><a id="controlTab_1" href="javascript:void(0);" class="NoBorderRadius NoborderTop NoBorderLeft first current titleHeader nowrap">
+                                       <i class=" icon-warning-sign"></i>&nbsp;Vấn đề thường gặp</a>
+                                    </li>
+                                    <li><a id="controlTab_2" href="javascript:void(0);" class="NoBorderRadius NoborderTop titleHeader nowrap">
+                                       <i class="icon-facetime-video"></i>&nbsp;Video hướng dẫn</a>
+                                    </li>
+                                    <li><a id="controlTab_3" href="javascript:void(0);" class="NoBorderRadius NoborderTop titleHeader nowrap">
+                                       <i class="icon-shopping-cart"></i>&nbsp;Giúp bạn bán hàng</a>
+                                    </li>
+                                 </ul>
+                              </div>
+                              <div class="widget-body maxheight">
+                                 <div id="contentTab_1" style="display: block;">
+                                    <div id="rssfeedsSupport" class="rssFeedDisplay">
+                                       <div class="item">
+                                          <a class="titlefield" target="_new" href="http://bizweb.vn/tro-giup/tong-quan-ve-bizweb-c2.html#item_9" rel="nofollow">Đăng ký gói giải pháp bán hàng trực tuyến</a><span class="datefield"></span>
+                                       </div>
+                                       <div class="item">
+                                          <a class="titlefield" target="_new" href="http://bizweb.vn/tro-giup/tong-quan-ve-bizweb-c2.html#item_14" rel="nofollow">Các dịch vụ BizWEB cung cấp </a><span class="datefield"></span>
+                                       </div>
+                                       <div class="item">
+                                          <a class="titlefield" target="_new" href="http://bizweb.vn/tro-giup/tich-hop-hang-tot-c53.html" rel="nofollow">Hướng dẫn sử dụng tính năng Tích hợp hàng tốt </a><span class="datefield"></span>
+                                       </div>
+                                       <div class="item">
+                                          <a class="titlefield" target="_new" href="http://bizweb.vn/tro-giup/tong-quan-ve-bizweb-c2.html#item_15" rel="nofollow">Quy định sử dụng </a><span class="datefield"></span>
+                                       </div>
+                                       <div class="item">
+                                          <a class="titlefield" target="_new" href="http://bizweb.vn/tro-giup/tong-quan-ve-bizweb-c2.html#item_16" rel="nofollow">Chính sách bảo mật</a><span class="datefield"></span>
+                                       </div>
+                                       <div class="item">
+                                          <a class="titlefield" target="_new" href="http://bizweb.vn/tro-giup/tong-quan-ve-bizweb-c2.html#item_13" rel="nofollow">BizWeb là gì?</a><span class="datefield"></span>
+                                       </div>
+                                       <div class="item">
+                                          <a class="titlefield" target="_new" href="http://bizweb.vn/tro-giup/tong-quan-ve-bizweb-c2.html#item_12" rel="nofollow">Đăng ký dịch vụ thiết kế web đồ họa </a><span class="datefield"></span>
+                                       </div>
+                                       <div class="item">
+                                          <a class="titlefield" target="_new" href="http://bizweb.vn/tro-giup/tong-quan-ve-bizweb-c2.html#item_10" rel="nofollow">Đăng ký tên miền trực tuyến </a><span class="datefield"></span>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div id="contentTab_2" style="display: none;">
+                                    <div class="hot" style="display: none;">
+                                       <div id="display_video" class="image">
+                                       </div>
+                                       <div id="title_video" class="text">
+                                       </div>
+                                    </div>
+                                    <div id="rssfeedsVideo" class="rssFeedDisplay">
+                                       <div class="item">
+                                          <a id="vid_0" target="_blank" href="http://bizweb.vn/video/bizweb-huong-dan-su-dung-tinh-nang-bo-loc-san-pham-v46.html">Bizweb hướng dẫn sử dụng tính năng Bộ lọc sản phẩm</a>
+                                       </div>
+                                       <div class="item">
+                                          <a id="vid_1" target="_blank" href="http://bizweb.vn/video/huong-dan-cach-thiet-lap-seo-cho-website-v35.html">Hướng dẫn cách thiết lập seo cho website </a>
+                                       </div>
+                                       <div class="item">
+                                          <a id="vid_2" target="_blank" href="http://bizweb.vn/video/6-buoc-don-gian-su-dung-email-marketing-v34.html">6 bước đơn giản sử dụng Email marketing </a>
+                                       </div>
+                                       <div class="item">
+                                          <a id="vid_3" target="_blank" href="http://bizweb.vn/video/huong-dan-su-dung-tinh-nang-tuy-chon-san-pham-v44.html">Hướng dẫn sử dụng tính năng Tùy chọn sản phẩm </a>
+                                       </div>
+                                       <div class="item">
+                                          <a id="vid_4" target="_blank" href="http://bizweb.vn/video/bizweb-huong-dan-tao-ma-quang-cao-coupon-v40.html">Bizweb hướng dẫn tạo mã quảng cáo Coupon </a>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div id="contentTab_3" style="display: none;">
+                                    <div id="rssfeedsBlog" class="rssFeedDisplay">
+                                       <div class="item"><a rel="nofollow" href="http://blog.bizweb.vn/6-meo-de-kinh-doanh-thanh-cong-trong-khi-van-lam-cong-viec-chinh/" target="_new" class="titlefield">6 mẹo để kinh doanh thành công trong khi vẫn làm công việc chính</a>   <span class="datefield"></span></div>
+                                       <div class="item"><a rel="nofollow" href="http://blog.bizweb.vn/infographic-bi-kip-marketing-online-hieu-qua-cho-nguoi-kinh-doanh/" target="_new" class="titlefield">[Infographic] Bí kíp Marketing online hiệu quả cho người kinh doanh</a>   <span class="datefield"></span></div>
+                                       <div class="item"><a rel="nofollow" href="http://blog.bizweb.vn/ban-tin-hot-tuan-tai-xe-uber-viet-tu-choi-cho-khach-vi-so-lo-tien-xang/" target="_new" class="titlefield">Bản tin HOT tuần – Tài xế Uber Việt từ chối chở khách vì sợ… lỗ tiền xăng</a>   <span class="datefield"></span></div>
+                                       <div class="item"><a rel="nofollow" href="http://blog.bizweb.vn/lam-the-nao-de-bat-dau-mot-y-tuong-kinh-doanh-cafe/" target="_new" class="titlefield">Làm thế nào để bắt đầu một ý tưởng kinh doanh cafe?</a>   <span class="datefield"></span></div>
+                                       <div class="item"><a rel="nofollow" href="http://blog.bizweb.vn/top-8-cong-ty-co-van-hoa-doanh-nghiep-khung-nhat-the-gioi-p2/" target="_new" class="titlefield">Top 8 công ty có văn hóa doanh nghiệp “khủng” nhất thế giới (P2)</a>   <span class="datefield"></span></div>
+                                       <div class="item"><a rel="nofollow" href="http://blog.bizweb.vn/top-8-cong-ty-co-van-hoa-doanh-nghiep-khung-nhat-the-gioi-p1/" target="_new" class="titlefield">Top 8 công ty có văn hóa doanh nghiệp “khủng” nhất thế giới (P1)</a>   <span class="datefield"></span></div>
+                                       <div class="item"><a rel="nofollow" href="http://blog.bizweb.vn/nhung-gi-ban-can-biet-ve-bao-mat-dien-toan-dam-may/" target="_new" class="titlefield">Những gì bạn cần biết về bảo mật điện toán đám mây</a>   <span class="datefield"></span></div>
+                                       <div class="item"><a rel="nofollow" href="http://blog.bizweb.vn/5-bi-mat-dong-troi-ma-khach-hang-khong-bao-gio-tiet-lo/" target="_new" class="titlefield">5 bí mật “động trời” mà khách hàng không bao giờ tiết lộ</a>   <span class="datefield"></span></div>
+                                       <div class="item"><a rel="nofollow" href="http://blog.bizweb.vn/9-meo-giup-ban-luot-web-kinh-doanh-online-nhanh-giong-nhu-mot-hacker/" target="_new" class="titlefield">9 mẹo giúp bạn lướt web kinh doanh online nhanh giống như một Hacker</a>   <span class="datefield"></span></div>
+                                       <div class="item"><a rel="nofollow" href="http://blog.bizweb.vn/hai-tien-trieu-voi-4-y-tuong-kinh-doanh-don-gian-canh-truong-hoc/" target="_new" class="titlefield">Hái tiền triệu với 4 ý tưởng kinh doanh đơn giản cạnh trường học</a>   <span class="datefield"></span></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div>
+               </div>
+            </div>
+            <div style="color: Gray; text-align: center;">
+               Bizweb 5.0 - Giải pháp bán hàng online Số 1 Việt Nam
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
