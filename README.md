@@ -16,3 +16,9 @@ Viết code php trong thẻ tag: {@@}
 1 số function mặc định
 {%HEADER%} : In tiêu đề trang
 {%BREADCRUMB%}: Breadcrumb của trang
+NGoài ra phiên bản này hỗ trợ đấy đủ tính năng từ version trước:
+Cấu hình quản trị động theo bảng
+HỖ trợ sitemap, robot, chỉnh sửa code, media, phân quyền...
+Hỗ trợ nén file js, css, html, nếu làm chuẩn pageinsight >90đ
+...
+hungvt1804@gmail.com
